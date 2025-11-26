@@ -18,7 +18,7 @@ router.post("/register", (req, res) => {
     [nombres, apellido_paterno, apellido_materno, telefono, hashedPassword],
     (err, result) => {
       if (err) {
-        console.error("❌ Error al registrar usuario:", err);
+        console.error("Error al registrar usuario:", err);
         return res.status(500).json({ error: "Error en el servidor" });
       }
 
@@ -41,7 +41,7 @@ router.post("/login", (req, res) => {
     [telefono],
     async (err, results) => {
       if (err) {
-        console.error("❌ Error al buscar usuario:", err);
+        console.error("Error al buscar usuario:", err);
         return res.status(500).json({ error: "Error interno del servidor" });
       }
 
