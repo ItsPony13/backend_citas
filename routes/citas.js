@@ -128,28 +128,28 @@ router.post("/crear", (req, res) => {
 
 // Cancelar una cita
 // Cancelar una cita
-// router.put("/cancelar/:id", (req, res) => {
-//   const { id } = req.params;
+router.put("/cancelar/:id", (req, res) => {
+  const { id } = req.params;
 
-//   const sql = `
-//     UPDATE citas 
-//     SET estado = 'cancelada'
-//     WHERE id_cita = ?
-//   `;
+  const sql = `
+    UPDATE citas 
+    SET estado = 'cancelada'
+    WHERE id_cita = ?
+  `;
 
-//   db.query(sql, [id], (err, result) => {
-//     if (err) {
-//       console.error("❌ Error al cancelar cita:", err);
-//       return res.status(500).json({ error: "Error cancelando cita" });
-//     }
+  db.query(sql, [id], (err, result) => {
+    if (err) {
+      console.error("Error al cancelar cita:", err);
+      return res.status(500).json({ error: "Error cancelando cita" });
+    }
 
-//     if (result.affectedRows === 0) {
-//       return res.status(404).json({ error: "Cita no encontrada" });
-//     }
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Cita no encontrada" });
+    }
 
-//     res.json({ message: "Cita cancelada correctamente" });
-//   });
-// });
+    res.json({ message: "Cita cancelada correctamente" });
+  });
+});
 
 //COMPLETAR CITAS
 // router.put("/completar/:id", (req, res) => {
