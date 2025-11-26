@@ -28,4 +28,4 @@ app.use("/servicios", serviciosRoutes);
 app.use("/citas", citasRoutes);
 app.use("/notificaciones", notificacionesRoutes);
 
-app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Servidor corriendo en ${PORT}`));
