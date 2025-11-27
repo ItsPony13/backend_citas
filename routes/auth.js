@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 const router = express.Router();
 
 /* -----------------------------------------
-   🔐 REGISTER
+  REGISTER
 -------------------------------------------- */
 router.post("/register", (req, res) => {
   const { nombres, apellido_paterno, apellido_materno, telefono, password } = req.body;
